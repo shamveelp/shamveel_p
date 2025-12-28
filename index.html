@@ -305,8 +305,8 @@
               <!-- Works Gallery Single Item Start -->
               <figure class="col-12 col-md-6 gallery__item grid-item animate-card-2" itemprop="associatedMedia"
                 itemscope itemtype="http://schema.org/ImageObject">
-                <a href="img/works/chainverse-sample.mp4" data-image="img/works/chainverse-motto.jpg" class="gallery__link"
-                  itemprop="contentUrl" data-size="1400x1400">
+                <a href="img/works/chainverse-sample.mp4" data-image="img/works/chainverse-motto.jpg"
+                  class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
                   <img src="https://dummyimage.com/800x800/3c3c3c/636363" class="gallery__image" itemprop="thumbnail"
                     alt="Image description">
                 </a>
@@ -402,12 +402,13 @@
                     <a href="https://github.com/shamveelp/" target="_blank"><span
                         class="rounded-tag opposite">Github</span></a>
                   </div>
-                  <p class="small">Check out my GitHub profile for more exciting projects and repositories that showcase my
+                  <p class="small">Check out my GitHub profile for more exciting projects and repositories that showcase
+                    my
                     skills and creativity in web development.
                   </p>
                 </figcaption>
               </figure>
-              
+
 
             </div>
           </div>
@@ -1064,28 +1065,47 @@
             <!-- Reply Messages End -->
 
             <!-- Contact Form Start -->
-            <form class="form contact-form" id="contact-form">
+            <!-- Contact Form Start -->
+            <style>
+              .error-message {
+                color: #ff4d4d;
+                font-size: 13px;
+                margin-top: 5px;
+                display: none;
+                text-align: left;
+                width: 100%;
+              }
+
+              .form__item {
+                margin-bottom: 20px;
+                /* Ensure space for error message */
+              }
+            </style>
+            <form class="form contact-form" id="contact-form" novalidate>
               <!-- Hidden Required Fields -->
-              <input type="hidden" name="project_name" value="Starter Template">
-              <input type="hidden" name="admin_email" value="support@mixdesign.club">
-              <input type="hidden" name="form_subject" value="Contact Form Message">
+              <input type="hidden" name="access_key" value="da8aa97d-47d7-412a-aa3b-bf965bdb3da5">
               <!-- END Hidden Required Fields-->
               <div class="container-fluid p-0">
                 <div class="row gx-0">
                   <div class="col-12 col-md-6 form__item animate-in-up">
-                    <input type="text" name="Name" placeholder="Your Name*" required>
+                    <input type="text" name="name" placeholder="Your Name*">
+                    <span class="error-message" id="name-error"></span>
                   </div>
                   <div class="col-12 col-md-6 form__item animate-in-up">
-                    <input type="text" name="Company" placeholder="Company Name">
+                    <input type="text" name="subject" placeholder="Subject*">
+                    <span class="error-message" id="subject-error"></span>
                   </div>
                   <div class="col-12 col-md-6 form__item animate-in-up">
-                    <input type="email" name="E-mail" placeholder="Email Adress*" required>
+                    <input type="email" name="email" placeholder="Email Address*">
+                    <span class="error-message" id="email-error"></span>
                   </div>
                   <div class="col-12 col-md-6 form__item animate-in-up">
-                    <input type="tel" name="Phone" placeholder="Phone Number*" required>
+                    <input type="tel" name="phone" placeholder="Phone Number*">
+                    <span class="error-message" id="phone-error"></span>
                   </div>
                   <div class="col-12 form__item animate-in-up">
-                    <textarea name="Message" placeholder="A Few Words*" required></textarea>
+                    <textarea name="message" placeholder="A Few Words*"></textarea>
+                    <span class="error-message" id="message-error"></span>
                   </div>
                   <div class="col-12 form__item animate-in-up">
                     <button class="btn btn-default btn-hover btn-hover-accent" type="submit">

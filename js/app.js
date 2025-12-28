@@ -34,7 +34,7 @@
 // Table of Contents End
 // ------------------------------------------------
 
-$(function() {
+$(function () {
 
   "use strict";
 
@@ -53,21 +53,21 @@ $(function() {
       document.getElementById("loader").classList.add("loaded");
     }, 300);
 
-    gsap.set(".animate-headline", {y: 50, opacity: 0});
+    gsap.set(".animate-headline", { y: 50, opacity: 0 });
     ScrollTrigger.batch(".animate-headline", {
       interval: 0.1,
       batchMax: 4,
       duration: 6,
       onEnter: batch => gsap.to(batch, {
-        opacity: 1, 
+        opacity: 1,
         y: 0,
         ease: 'sine',
-        stagger: {each: 0.15, grid: [1, 4]}, 
+        stagger: { each: 0.15, grid: [1, 4] },
         overwrite: true
       }),
-      onLeave: batch => gsap.set(batch, {opacity: 1, y: 0, overwrite: true}),
-      onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-      onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
+      onLeave: batch => gsap.set(batch, { opacity: 1, y: 0, overwrite: true }),
+      onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+      onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 50, overwrite: true })
     });
 
   });
@@ -104,7 +104,7 @@ $(function() {
   // Parallax (apply parallax effect to any element with a data-speed attribute) Start
   // ------------------------------------------------------------------------------ //
   gsap.to("[data-speed]", {
-    y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
+    y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window),
     ease: "none",
     scrollTrigger: {
       start: 0,
@@ -156,62 +156,62 @@ $(function() {
 
   // Animation Cards Stack
   // Grid 2x
-  gsap.set(".animate-card-2", {y: 100, opacity: 0});
+  gsap.set(".animate-card-2", { y: 100, opacity: 0 });
   ScrollTrigger.batch(".animate-card-2", {
     interval: 0.1,
     batchMax: 2,
     duration: 6,
     onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
+      opacity: 1,
       y: 0,
       ease: 'sine',
-      stagger: {each: 0.15, grid: [1, 2]}, 
+      stagger: { each: 0.15, grid: [1, 2] },
       overwrite: true
     }),
-    onLeave: batch => gsap.set(batch, {opacity: 1, y: 0, overwrite: true}),
-    onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-    onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
+    onLeave: batch => gsap.set(batch, { opacity: 1, y: 0, overwrite: true }),
+    onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 100, overwrite: true })
   });
 
   // Grid 3x
-  gsap.set(".animate-card-3", {y: 50, opacity: 0});
+  gsap.set(".animate-card-3", { y: 50, opacity: 0 });
   ScrollTrigger.batch(".animate-card-3", {
     interval: 0.1,
     batchMax: 3,
     duration: 3,
     onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
+      opacity: 1,
       y: 0,
       ease: 'sine',
-      stagger: {each: 0.15, grid: [1, 3]}, 
+      stagger: { each: 0.15, grid: [1, 3] },
       overwrite: true
     }),
-    onLeave: batch => gsap.set(batch, {opacity: 1, y: 0, overwrite: true}),
-    onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-    onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
+    onLeave: batch => gsap.set(batch, { opacity: 1, y: 0, overwrite: true }),
+    onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 50, overwrite: true })
   });
 
   // Grid 5x
-  gsap.set(".animate-card-5", {y: 50, opacity: 0});
+  gsap.set(".animate-card-5", { y: 50, opacity: 0 });
   ScrollTrigger.batch(".animate-card-5", {
     interval: 0.1,
     batchMax: 5,
     delay: 1000,
     onEnter: batch => gsap.to(batch, {
-      opacity: 1, 
+      opacity: 1,
       y: 0,
       ease: 'sine',
-      stagger: {each: 0.15, grid: [1, 5]}, 
+      stagger: { each: 0.15, grid: [1, 5] },
       overwrite: true
     }),
-    onLeave: batch => gsap.set(batch, {opacity: 1, y: 0, overwrite: true}),
-    onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
-    onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 50, overwrite: true})
+    onLeave: batch => gsap.set(batch, { opacity: 1, y: 0, overwrite: true }),
+    onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 50, overwrite: true })
   });
 
-  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-2", {y: 0, opacity: 1}));
-  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-3", {y: 0, opacity: 1}));
-  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-5", {y: 0, opacity: 1}));
+  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-2", { y: 0, opacity: 1 }));
+  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-3", { y: 0, opacity: 1 }));
+  ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".animate-card-5", { y: 0, opacity: 1 }));
   // --------------------------------------------- //
   // Scroll Animations End
   // --------------------------------------------- //
@@ -219,7 +219,7 @@ $(function() {
   // --------------------------------------------- //
   // Smooth Scrolling Start
   // --------------------------------------------- //
-  $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+  $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -227,13 +227,13 @@ $(function() {
         event.preventDefault();
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 1000, function() {
+        }, 1000, function () {
           var $target = $(target);
           $target.focus();
           if ($target.is(":focus")) {
             return false;
           } else {
-            $target.attr('tabindex','-1');
+            $target.attr('tabindex', '-1');
             $target.focus();
           };
         });
@@ -305,24 +305,77 @@ $(function() {
   // --------------------------------------------- //
   // Contact Form Start
   // --------------------------------------------- //
-  $("#contact-form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-      $('.contact').find('.form').addClass('is-hidden');
-      $('.contact').find('.form__reply').addClass('is-visible');
-			setTimeout(function() {
-				// Done Functions
-        $('.contact').find('.form__reply').removeClass('is-visible');
-        $('.contact').find('.form').delay(300).removeClass('is-hidden');
-				th.trigger("reset");
-			}, 5000);
-		});
-		return false;
-	});
+
+  // Restrict Phone Input to Numbers Only
+  $('input[name="phone"]').on('input', function () {
+    $(this).val($(this).val().replace(/[^0-9]/g, ''));
+  });
+
+  $("#contact-form").submit(function (e) {
+    if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
+
+    var th = $(this);
+    var isValid = true;
+
+    // Reset errors
+    $(".error-message").hide().text("");
+
+    // Name Validation
+    var name = th.find('input[name="name"]').val().trim();
+    if (name.length < 2) {
+      $("#name-error").text("Name must be at least 2 characters long.").show();
+      isValid = false;
+    }
+
+    // Subject Validation
+    var subject = th.find('input[name="subject"]').val().trim();
+    if (subject.length < 3) {
+      $("#subject-error").text("Subject must be at least 3 characters long.").show();
+      isValid = false;
+    }
+
+    // Email Validation
+    var email = th.find('input[name="email"]').val().trim();
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      $("#email-error").text("Please enter a valid email address.").show();
+      isValid = false;
+    }
+
+    // Phone Validation
+    var phone = th.find('input[name="phone"]').val().trim();
+    var phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone)) {
+      $("#phone-error").text("Phone number must be exactly 10 digits.").show();
+      isValid = false;
+    }
+
+    // Message Validation
+    var message = th.find('textarea[name="message"]').val().trim();
+    if (message.length < 10) {
+      $("#message-error").text("Message must be at least 10 characters long.").show();
+      isValid = false;
+    }
+
+    if (isValid) {
+      $.ajax({
+        type: "POST",
+        url: "https://api.web3forms.com/submit",
+        dataType: 'json',
+        data: th.serialize()
+      }).done(function () {
+        $('.contact').find('.form').addClass('is-hidden');
+        $('.contact').find('.form__reply').addClass('is-visible');
+        setTimeout(function () {
+          // Done Functions
+          $('.contact').find('.form__reply').removeClass('is-visible');
+          $('.contact').find('.form').delay(300).removeClass('is-hidden');
+          th.trigger("reset");
+        }, 5000);
+      });
+    }
+    return false;
+  });
   // --------------------------------------------- //
   // Contact Form End
   // --------------------------------------------- //
@@ -330,8 +383,8 @@ $(function() {
   // --------------------------------------------- //
   // Modernizr SVG Fallback Start
   // --------------------------------------------- //
-  if(!Modernizr.svg) {
-    $("img[src*='svg']").attr("src", function() {
+  if (!Modernizr.svg) {
+    $("img[src*='svg']").attr("src", function () {
       return $(this).attr("src").replace(".svg", ".png");
     });
   };
@@ -344,10 +397,10 @@ $(function() {
   // --------------------------------------------- //
   try {
     $.browserSelector();
-    if($("html").hasClass("chrome")) {
+    if ($("html").hasClass("chrome")) {
       $.smoothScroll();
     }
-  } catch(err) {
+  } catch (err) {
   };
   // --------------------------------------------- //
   // Chrome Smooth Scroll End
@@ -356,7 +409,7 @@ $(function() {
   // --------------------------------------------- //
   // Images Moving Ban Start
   // --------------------------------------------- //
-  $("img, a").on("dragstart", function(event) { event.preventDefault(); });
+  $("img, a").on("dragstart", function (event) { event.preventDefault(); });
   // --------------------------------------------- //
   // Images Moving Ban End
   // --------------------------------------------- //
@@ -365,7 +418,7 @@ $(function() {
   // Detecting Mobile/Desktop Start
   // --------------------------------------------- //
   var isMobile = false;
-  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $('html').addClass('touch');
     isMobile = true;
   }
@@ -382,10 +435,10 @@ $(function() {
   // --------------------------------------------- //
   // PhotoSwipe Gallery Images Replace Start
   // --------------------------------------------- //
-  $('.gallery__link').each(function(){
+  $('.gallery__link').each(function () {
     $(this)
-    .append('<div class="picture"></div>')
-    .children('.picture').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
+      .append('<div class="picture"></div>')
+      .children('.picture').css({ 'background-image': 'url(' + $(this).attr('data-image') + ')' });
   });
   // --------------------------------------------- //
   // PhotoSwipe Gallery Images Replace End
@@ -398,15 +451,15 @@ $(function() {
 // --------------------------------------------- //
 const themeBtn = document.querySelector('.color-switcher');
 
-function getCurrentTheme(){
+function getCurrentTheme() {
   let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   localStorage.getItem('template.theme') ? theme = localStorage.getItem('template.theme') : null;
   return theme;
 }
 
-function loadTheme(theme){
+function loadTheme(theme) {
   const root = document.querySelector(':root');
-  if(theme === "light"){
+  if (theme === "light") {
     themeBtn.innerHTML = `<em></em><i class="ph-bold ph-moon-stars"></i>`;
   } else {
     themeBtn.innerHTML = `<em></em><i class="ph-bold ph-sun"></i>`;
@@ -416,7 +469,7 @@ function loadTheme(theme){
 
 themeBtn.addEventListener('click', () => {
   let theme = getCurrentTheme();
-  if(theme === 'dark'){
+  if (theme === 'dark') {
     theme = 'light';
   } else {
     theme = 'dark';
