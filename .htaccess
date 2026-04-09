@@ -341,6 +341,9 @@ AddDefaultCharset utf-8
     # (1)
     RewriteEngine On
 
+    # Redirect /resume to the PDF
+    RewriteRule ^resume/?$ /Resume.pdf [R=301,L]
+
     # (2)
     Options +FollowSymlinks
 
